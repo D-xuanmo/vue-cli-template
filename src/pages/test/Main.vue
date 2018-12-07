@@ -1,17 +1,28 @@
 <template>
   <div class="container">
-    示例页面
+    <div class="content" v-html="result"></div>
   </div>
 </template>
 <script>
+import API from '@/api'
 export default {
   name: 'Test',
   data () {
     return {
-
+      result: ''
     }
+  },
+  created () {
+    window.common.showLoading()
+    API.getInformation({ wd: '学信网' }).then(({ data }) => {
+      window.common.hideLoading()
+      this.result = data
+    }).catch(err => console.log(err))
   }
 }
 </script>
 <style lang="scss" scoped>
+.container {
+  padding: 0 px2px(40px);
+}
 </style>

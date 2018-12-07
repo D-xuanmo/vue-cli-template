@@ -5,14 +5,17 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "precommit": "npm run lint",
     "lint": "vue-cli-service lint",
+    "precommit": "npm run lint",
     "start": "npm run serve"
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "cube-ui": "~1.12.1",
+    "qs": "^6.6.0",
     "vue": "^2.5.17",
-    "vue-router": "^3.0.2"
+    "vue-router": "^3.0.2",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.1",
@@ -38,10 +41,19 @@
     "postcss-pxtorem": "^4.0.1",
     "postcss-url": "^8.0.0",
     "sass-loader": "^7.1.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
     "svg-sprite-loader": "^3.9.2",
+    "vue-cli-plugin-cube-ui": "^0.2.4",
     "vue-template-compiler": "^2.5.17"
   },
   "gitHooks": {
     "pre-commit": "npm run lint -- --fix"
+  },
+  "transformModules": {
+    "cube-ui": {
+      "transform": "cube-ui/src/modules/${member}",
+      "kebabCase": true
+    }
   }
 }
