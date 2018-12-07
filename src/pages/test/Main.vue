@@ -13,7 +13,6 @@ export default {
     }
   },
   created () {
-    window.common.showLoading()
     API.getInformation({ wd: '学信网' }).then(({ data }) => {
       window.common.hideLoading()
       this.result = data
