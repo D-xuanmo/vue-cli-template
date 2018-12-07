@@ -1,4 +1,20 @@
 .cube-popup {
+  &.cube-global-loading,
+  &.cube-global-toast {
+    .cube-popup-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: px2px(160px) !important;
+      height: px2px(160px);
+      background: $color-toast-bg;
+      border-radius: $border-radius;
+      color: #fff;
+    }
+  }
+
+  // 信息提示框
   &.cube-global-toast {
     .cube-popup-content {
       width: auto !important;
@@ -8,17 +24,8 @@
     }
   }
 
-  .cube-popup-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: px2px(160px) !important;
-    height: px2px(160px);
-    background: $color-toast-bg;
-    border-radius: $border-radius;
-    color: #fff;
-
+  // loading
+  &.cube-global-loading {
     .loading-text {
       margin-top: 10px;
     }

@@ -32,6 +32,12 @@ axios.interceptors.request.use(config => {
 
 // 添加响应拦截器
 axios.interceptors.response.use(response => {
+  // 错误拦截判断
+  if (response.data && !response.data.success) {
+    window.common.hideLoading()
+    window.common.showToast(response.data.message)
+    return
+  }
   return {
     data: response.data,
     status: response.status,
@@ -39,6 +45,11 @@ axios.interceptors.response.use(response => {
     statusText: response.statusText
   }
 }, error => {
+  window.common.hideLoading()
+  const errMsg = error.message
+  errMsg.indexOf('timeout') !== -1
+    ? window.common.showToast({ text: '请求超时！', time: 0 })
+    : window.common.showToast({ text: error.message, time: 0 })
   return Promise.reject(error)
 })
 

@@ -4,6 +4,7 @@
     <!-- loading start -->
     <cube-popup
       v-model="widget.loading.show"
+      type="global-loading"
       :mask="widget.loading.mask"
       :center="widget.loading.center"
       :z-index="widget.loading.zIndex">

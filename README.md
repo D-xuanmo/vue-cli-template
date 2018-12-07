@@ -2,9 +2,9 @@
 
 * 分支说明：
 * master：主分支
-* dev：开发分支，后续提交都在此分支
+* dev：开发分支
 * test：测试环境分支
-* 脚手架采取3.x，项目已配置vue-router + eslint + axios
+* 脚手架采取3.x，项目已配置vue-router + eslint + axios + cube-ui
 
 ## 安装项目依赖
 ```
@@ -36,6 +36,7 @@ npm run lint
 
 ## 目录文件说明
 * src：项目源码
+   - api：存放所有的请求，按页面编写，入口文件为`index.js`
    - assets：静态文件目录
       1. scss：公用的scss文件，`variables.scss`无需引入，每个页面都可以直接使用里面的变量
       1. images：项目图片资源，每个页面所需图片在此目录建立对应的目录区分
@@ -47,11 +48,13 @@ npm run lint
          - index.js：本页面路由
          - children：子页面
          - components：如果本页面有页面级别的公用组件可在本页面目录新建这个目录存放
+   - store：vuex目录
    - utils：项目公用js和公用配置
       1. index.js：项目公用js和需要的配置
       1. axios.js：axios的一些基础配置，调用方法：`window.axios`
    - main.js：vue项目入口文件
    - router.js：项目路由js
+   - theme.styl：cube-ui样式变量文件
 * static：不需要经过打包的文件
 * .env.development：开发环境变量文件
 * .env.production：生产环境变量文件
@@ -62,6 +65,7 @@ npm run lint
 * [vuejs风格指南查看](https://cn.vuejs.org/v2/style-guide/)
 * [eslint风格指南](https://github.com/standard/standard/blob/master/docs/RULES-zhcn.md)
 * [css风格指南查看](https://codeguide.bootcss.com/#css)
+* [滴滴UI官网](https://didi.github.io/cube-ui/#/zh-CN/docs/introduction)
 * 所有的缩进都为2个空格
 * 所有文件不能出现中文名
 * 目录名字采取小写加中划线分割，如：`app-header`

@@ -7,11 +7,13 @@ import * as utils from '@/utils'
 
 Vue.config.productionTip = false
 
+// 全局方法
 window.common = {
   showLoading: utils.showLoading,
   hideLoading: utils.hideLoading,
   showToast: utils.showToast,
-  hideToast: utils.hideToast
+  hideToast: utils.hideToast,
+  showConfirm: utils.showConfirm
 }
 
 new Vue({

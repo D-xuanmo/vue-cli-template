@@ -7,3 +7,5 @@ export const hideLoading = () => store.dispatch('hideLoading')
 export const showToast = config => store.dispatch('showToast', config)
 
 export const hideToast = () => store.dispatch('hideToast')
+
+export const showConfirm = config => store.dispatch('showConfirm', config)

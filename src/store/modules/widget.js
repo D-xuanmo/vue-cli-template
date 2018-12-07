@@ -1,3 +1,4 @@
+import { Dialog } from 'cube-ui'
 const widget = {
   state: {
     loading: {
@@ -14,6 +15,28 @@ const widget = {
       mask: true,
       time: 2000,
       zIndex: 999
+    },
+    confirm (config) {
+      return Dialog.$create({
+        type: 'confirm',
+        icon: config.icon,
+        title: config.title,
+        content: config.content,
+        confirmBtn: {
+          text: config.confirmBtn.text,
+          active: true,
+          disabled: config.confirmBtn.disabled,
+          href: 'javascript:;'
+        },
+        cancelBtn: {
+          text: config.cancelBtn.text,
+          active: false,
+          disabled: config.cancelBtn.disabled,
+          href: 'javascript:;'
+        },
+        onConfirm: config.onConfirm,
+        onCancel: config.onCancel
+      })
     }
   },
 
@@ -38,6 +61,26 @@ const widget = {
 
     hideToast (state) {
       state.toast.show = false
+    },
+
+    showConfirm (state, config) {
+      let confirmConfig = {
+        icon: '',
+        title: '',
+        content: '',
+        confirmBtn: {
+          text: '确认',
+          disabled: false
+        },
+        cancelBtn: {
+          text: '取消',
+          disabled: false
+        },
+        onConfirm: () => {},
+        onCancel: () => {},
+        ...config
+      }
+      state.confirm(confirmConfig).show()
     }
   },
 
@@ -57,14 +100,21 @@ const widget = {
       if (typeof config === 'string') {
         toastConfig.text = config
       } else if (typeof config === 'object') {
-        toastConfig = config
+        toastConfig = {
+          ...toastConfig,
+          ...config
+        }
       } else {
         throw Error('"toast"传入参数类型错误')
       }
       commit('showToast', toastConfig)
 
-      // 隐藏
-      setTimeout(() => commit('hideToast'), state.toast.time)
+      // 隐藏，传入时间为0时不隐藏
+      state.toast.time && setTimeout(() => commit('hideToast'), state.toast.time)
+    },
+
+    showConfirm ({ commit }, config) {
+      commit('showConfirm', config)
     }
   }
 }
