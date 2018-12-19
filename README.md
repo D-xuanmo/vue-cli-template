@@ -1,9 +1,5 @@
 # vue-cli-3.x 移动端初始模版
 
-* 分支说明：
-* master：主分支
-* dev：开发分支
-* test：测试环境分支
 * 脚手架采取3.x，项目已配置vue-router + eslint + axios + cube-ui
 
 ## 安装项目依赖
@@ -74,7 +70,7 @@ npm run lint
   1. css属性后边统一加一个空格，如：`width: 100px;`
   1. scss、css的选择器层级最多不要超过5级，建议最多3级，css的class名字采取`kebab-case`，如：`menu-item`
 * js部分
-  1. js校验采取eslint（遇见eslint报错可将错误信息放入到[http://eslint.cn/](http://eslint.cn/)此网站查看）
+  1. js校验采取eslint
   1. 变量多使用`let`、`const`定义，常量使用大写加下划线，如`BASE_URL`
   1. 变量、函数生命采用小驼峰命名法，如：`getCode`，构造函数采取大驼峰命名法，如：`Person`
   1. 需要用到第三方库的时候使用`import`引入
