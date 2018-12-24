@@ -37,7 +37,7 @@ npm run lint
       1. scss：公用的scss文件，`variables.scss`无需引入，每个页面都可以直接使用里面的变量
       1. images：项目图片资源，每个页面所需图片在此目录建立对应的目录区分
    - components：公用组件目录
-      1. 每个组件建立一个文件夹，组件入口为：`Index.vue`
+      1. 每个组件建立一个文件夹，文件夹名字采用大驼峰，组件入口为：`index.vue`
    - pages：页面目录
       1. test：示例目录
          - Main.vue：页面入口

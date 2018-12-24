@@ -16,7 +16,7 @@ export default {
     API.getInformation({ wd: '学信网' }).then(({ data }) => {
       window.common.hideLoading()
       this.result = data
-    }).catch(err => console.log(err))
+    })
   }
 }
 </script>
