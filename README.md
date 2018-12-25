@@ -66,8 +66,6 @@ npm run lint
 * [滴滴UI官网](https://didi.github.io/cube-ui/#/zh-CN/docs/introduction)
 * 所有的缩进都为2个空格
 * 所有文件不能出现中文名
-* 目录名字采取小写加中划线分割，如：`app-header`
-* .vue文件命名统一为大驼峰命名，如：`TestList.vue`
 * css部分
   1. css属性后边统一加一个空格，如：`width: 100px;`
   1. scss、css的选择器层级最多不要超过5级，建议最多3级，css的class名字采取`kebab-case`，如：`menu-item`
