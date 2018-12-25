@@ -49,7 +49,7 @@ npm run lint
    - store：vuex目录
    - utils：项目公用js和公用配置
       1. index.js：项目公用js和需要的配置
-      1. axios.js：axios的一些基础配置，调用方法：`window.axios`
+      1. axios.js：axios的一些基础配置
    - main.js：vue项目入口文件
    - router.js：项目路由js
    - theme.styl：cube-ui样式变量文件
