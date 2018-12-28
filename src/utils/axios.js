@@ -24,7 +24,7 @@ const axios = Axios.create(option)
 // 添加请求拦截器
 axios.interceptors.request.use(config => {
   // 请求时设置token
-  // config.headers.sessionId = store.state.common.token
+  // config.headers.token = store.state.common.token
   return config
 }, error => {
   return Promise.reject(error)
