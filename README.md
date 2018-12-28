@@ -1,6 +1,6 @@
 # vue-cli-3.x 移动端初始模版
 
-* 脚手架采取3.x，项目已配置vue-router + eslint + axios + cube-ui + sass(scss)
+* 脚手架采取3.x，项目已配置vue-router + vuex + eslint + axios + cube-ui + sass(scss)
 
 * 项目已经配置px转rem，实际pc写设计稿宽度750px除2即可，具体配置可查看`.postcssrc.js`文件，也可使用scss的`px2px()`方法转换
 
