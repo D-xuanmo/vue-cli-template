@@ -30,7 +30,15 @@ axios.interceptors.request.use(config => {
   return Promise.reject(error)
 })
 
-// 添加响应拦截器
+/**
+ * [添加响应拦截器]
+ * 接口返回参数定义格式:
+ * @response {Object}
+ * data：接口返回的数据
+ * success：定义请求是否成功（boolean）
+ * message：定义请求的错误提示信息
+ * code：定义请求返回码
+ */
 axios.interceptors.response.use(response => {
   // 错误拦截判断
   if (response.data && !response.data.success) {
