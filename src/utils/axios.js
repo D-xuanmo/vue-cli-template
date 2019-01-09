@@ -44,7 +44,7 @@ axios.interceptors.response.use(response => {
   if (response.data && !response.data.success) {
     window.common.hideLoading()
     window.common.showToast(response.data.message)
-    return
+    return Promise.reject(new Error(response.data.message))
   }
   return {
     data: response.data,
