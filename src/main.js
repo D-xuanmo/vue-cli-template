@@ -5,6 +5,9 @@ import store from './store'
 import './cube-ui'
 import * as utils from '@/utils'
 
+// 引入svg-icon组件
+import './components/SvgIcon'
+
 Vue.config.productionTip = false
 
 // 全局方法

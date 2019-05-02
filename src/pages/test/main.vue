@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <div class="content" v-html="result"></div>
+    我是svg-icon组件： <x-svg-icon iconName="qq"></x-svg-icon>
   </div>
 </template>
 <script>

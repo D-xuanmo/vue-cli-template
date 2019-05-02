@@ -38,8 +38,11 @@ npm run lint
    - assets：静态文件目录
       1. scss：公用的scss文件，`variables.scss`无需引入，每个页面都可以直接使用里面的变量
       1. images：项目图片资源，每个页面所需图片在此目录建立对应的目录区分
+      1. svg-icon: 存放svg图标
    - components：公用组件目录，目录命名为大驼峰
       1. 每个组件建立一个文件夹，文件夹名字采用小驼峰，组件入口为：`index.vue`
+      1. svg-icon: svg图标组件，已全局注册，调用方式：`<x-svg-icon iconName="name"></x-svg-icon>`,`iconName`传入`src/assets/svg-icon`目录下的文件名即可调用
+      1. Test: 示例组件目录
    - pages：页面目录
       1. test：示例目录
          - main.vue：页面入口
