@@ -5,7 +5,7 @@ import Vue from 'vue'
 // Style is always required.
 import {
   /* eslint-disable no-unused-vars */
-  Style,
+  // Style,
   // basic
   Button,
   Loading,
