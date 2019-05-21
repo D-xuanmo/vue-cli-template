@@ -46,7 +46,7 @@ npm run lint
    - pages：页面目录
       1. test：示例目录
          - main.vue：页面入口
-         - index.js：本页面路由
+         - \*.router.js：页面路由，router.js不在需要引入，命名为这个格式会被自动注册到路由中
          - children：子页面
          - components：如果本页面有页面级别的公用组件可在本页面目录新建这个目录存放
    - store：vuex目录
