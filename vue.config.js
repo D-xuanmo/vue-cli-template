@@ -10,11 +10,11 @@ module.exports = {
       errors: true
     },
     proxy: {
-      '/api': {
+      [process.env.VUE_APP_BASE_API]: {
         target: 'https://www.baidu.com',
         changeOrigin: true,
         pathRewrite: {
-          '^/api': ''
+          [`^${process.env.VUE_APP_BASE_API}`]: ''
         }
       }
     }
