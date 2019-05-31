@@ -1,0 +1,56 @@
+// 设置标签默认样式
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: $font-size-base;
+}
+
+button,
+input,
+select,
+textarea {
+  outline: 0;
+  border: 0;
+  background: none;
+  -webkit-appearance: none;
+  @include placeholderColor();
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+  border: 0;
+}
+
+em,i {
+	font-style: normal;
+}
+
+a {
+  text-decoration: none;
+  color: $color-theme;
+  transition: .5s;
+
+  &:active,
+  &:hover {
+    text-decoration: none;
+    color: $color-theme;
+  }
+}
+
+body {
+  font: $font-size-base "Arial", PingFangSC-Regular,Microsoft Yahei;
+  color: $color-theme;
+}

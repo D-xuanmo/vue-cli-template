@@ -1,0 +1,41 @@
+// 文字大小
+$font-size-small: 12px !default;
+$font-size-base: 14px !default;
+$font-size-large: 16px !default;
+
+// 颜色
+$color-theme: #999;
+
+// toast背景颜色
+$color-toast-bg: rgba(37, 38, 45, 0.8);
+
+$border-radius: 5px;
+
+// 将设计稿单位转换真实px
+@function px2px($px) {
+  @return $px / 2;
+}
+
+// 修改input placeholder颜色
+@mixin placeholderColor($color: #ccc) {
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+}
+
+// 单行文字显示省略号
+%ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 多行文字显示省略号
+@mixin ellipsisMultiline($number: 1) {
+  display: -webkit-box;
+  overflow: hidden;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $number;
+}

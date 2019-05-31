@@ -1,28 +1,48 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-view/>
+    <!-- loading start -->
+    <x-loading
+      v-model="widget.loading.show"
+      :text="widget.loading.text"
+      :mask="widget.loading.mask"
+      :z-index="widget.loading.zIndex"
+      :background="widget.loading.background">
+    </x-loading>
+    <!-- loading end -->
+    <!-- toast start -->
+    <x-toast
+      v-model="widget.toast.show"
+      :text="widget.toast.text"
+      :mask="widget.toast.mask"
+      :z-index="widget.toast.zIndex"
+      :background="widget.toast.background">
+    </x-toast>
+    <!-- toast end -->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import XLoading from '@/components/Loading'
+import XToast from '@/components/Toast'
+import { mapGetters } from 'vuex'
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    XLoading,
+    XToast
+  },
+  data () {
+    return {
+    }
+  },
+  computed: {
+    ...mapGetters([
+      'widget'
+    ])
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
 </style>

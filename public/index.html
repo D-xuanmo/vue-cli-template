@@ -6,6 +6,20 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title>vue-cli-m</title>
+    <script>
+    // 计算root fontsize
+    window.__setFontSize__ = (function (doc, win) {
+      var docEl = doc.documentElement;
+      // resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+      var recalc = function () {
+        document.documentElement.style.fontSize = Math.min(640, Math.max(document.documentElement.clientWidth, 320)) / 375 * 14 + 'px'
+      };
+      if (!doc.addEventListener) return;
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+      win.addEventListener('resize', recalc, false);
+      return recalc;
+    })(document, window);
+  </script>
   </head>
   <body>
     <noscript>
