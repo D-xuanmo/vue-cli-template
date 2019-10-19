@@ -2,6 +2,7 @@ module.exports = {
   lintOnSave: true,
   publicPath: process.env.VUE_APP_BASE_URL,
   outputDir: process.env.VUE_APP_OUTPUTDIR,
+
   devServer: {
     overlay: {
       warnings: true,
@@ -9,22 +10,28 @@ module.exports = {
     },
     proxy: {
       [process.env.VUE_APP_BASE_API]: {
-        target: 'https://www.xuanmo.xin',
-        changeOrigin: true,
-        pathRewrite: {
-          [`^${process.env.VUE_APP_BASE_API}`]: ''
-        }
+        target: 'http://localhost:3333',
+        changeOrigin: true
       }
     }
   },
+
   css: {
     loaderOptions: {
       sass: {
         data: '@import "@/assets/scss/variables.scss";'
+      },
+      stylus: {
+        'resolve url': true,
+        'import': [
+          './src/theme'
+        ]
       }
     }
   },
+
   productionSourceMap: false,
+
   chainWebpack: config => {
     config.output.filename('[name].[hash].js').end()
     config.module.rule('svg').uses.delete('file-loader')
@@ -36,5 +43,12 @@ module.exports = {
         extract: false,
         symbolId: 'icon-[name]'
       })
+  },
+
+  pluginOptions: {
+    'cube-ui': {
+      postCompile: true,
+      theme: true
+    }
   }
 }

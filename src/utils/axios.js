@@ -1,6 +1,7 @@
 import Axios from 'axios'
 import qs from 'qs'
-// import router from '@/router'
+import router from '@/router'
+import store from '@/store'
 
 const option = {
   timeout: 20000,
@@ -24,7 +25,7 @@ const axios = Axios.create(option)
 // 添加请求拦截器
 axios.interceptors.request.use(config => {
   // 请求时设置token
-  // config.headers.token = store.state.common.token
+  config.headers.token = store.state.authen.token
   return config
 }, error => {
   return Promise.reject(error)
@@ -44,6 +45,9 @@ axios.interceptors.response.use(response => {
   if (response.data && !response.data.success) {
     window.common.hideLoading()
     window.common.showToast(response.data.message)
+    if (response.data.code === 'A1004') {
+      router.push({ name: 'Login' })
+    }
     return Promise.reject(new Error(response.data.message))
   }
   return {
